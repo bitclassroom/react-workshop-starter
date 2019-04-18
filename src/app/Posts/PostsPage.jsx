@@ -11,19 +11,21 @@ class PostsPage extends Component {
         this.loadPosts()
     }
 
-    loadPosts() {
-        postsService.fetchPosts().then(posts => {
-            this.setState({
-                posts: posts
-            })
-        })
+    async loadPosts() {
+        try {
+            const posts = await postsService.fetchPosts()
+
+            this.setState({ posts })
+        } catch (error) {
+            alert('This is err')
+        }
     }
 
     render() {
         return (
             <div>
-                <h1>Posts Page</h1>
-                <PostList posts={this.state.posts} isGrid={this.props.isGrid} />
+                <h3>Posts Page</h3>
+                <PostList posts={this.state.posts} />
             </div>
         )
     }

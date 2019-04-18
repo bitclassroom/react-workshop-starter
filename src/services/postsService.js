@@ -2,16 +2,14 @@ import { api } from '../shared/api'
 import Post from '../model/Post'
 
 class PostsService {
-    fetchPosts() {
-        return api.get('/posts').then(postsArr => {
-            console.log(postsArr)
-            const posts = postsArr.map(post => {
-                return new Post(post)
-            })
+    async fetchPosts() {
+        const postsArr = await api.get('/posts')
 
-            console.log(posts)
-            return posts
+        const posts = postsArr.map(post => {
+            return new Post(post)
         })
+
+        return posts
     }
 }
 

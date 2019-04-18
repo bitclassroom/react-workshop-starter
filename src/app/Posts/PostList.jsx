@@ -2,7 +2,7 @@ import React from 'react'
 import PostItem from './PostItem'
 
 const PostList = props => {
-    const { posts, isGrid } = props
+    const { posts } = props
 
     if (posts.length === 0) {
         return <h4>Loading...</h4>
@@ -11,7 +11,7 @@ const PostList = props => {
     return (
         <div className="row">
             {posts.map(post => (
-                <PostItem post={post} isGrid={isGrid} />
+                <PostItem post={post} />
             ))}
         </div>
     )
