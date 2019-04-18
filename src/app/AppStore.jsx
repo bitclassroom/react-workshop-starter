@@ -8,25 +8,22 @@ class AppStore extends Component {
     }
 
     onChangeLayout = () => {
-        this.setState(prevState => {
-            return {
-                isGrid: !prevState.isGrid
-            }
-        })
+        this.setState(prevState => ({
+            ...prevState,
+            isGrid: !prevState.isGrid
+        }))
     }
 
     onChangeTheme = () => {
-        this.setState(prevState => {
-            return {
-                isLight: !prevState.isLight
-            }
-        })
+        this.setState(prevState => ({
+            ...prevState,
+            isLight: !prevState.isLight
+        }))
     }
 
     render() {
         const storeValue = {
-            isGrid: this.state.isGrid,
-            isLight: this.state.isLight,
+            ...this.state,
             onChangeLayout: this.onChangeLayout,
             onChangeTheme: this.onChangeTheme
         }
