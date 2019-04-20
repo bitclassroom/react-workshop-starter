@@ -7,3 +7,16 @@
 main {
     flex: 1 0 auto;
 }
+
+.modal {
+    z-index: 5;
+    top: 20%;
+}
+
+.open {
+    display: block;
+}
+
+.close {
+    display: none;
+}

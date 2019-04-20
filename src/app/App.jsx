@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Main from './components/Main'
 
 import AppStore from './AppStore'
+import Modal from './components/Modal'
 
 class App extends React.Component {
     render() {

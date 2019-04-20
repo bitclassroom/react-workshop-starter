@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PostList from './PostList'
 import { postsService } from '../../services/postsService'
+import Modal from '../components/Modal'
 
 class PostsPage extends Component {
     state = {

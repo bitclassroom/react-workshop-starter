@@ -28,6 +28,11 @@ const Header = props => {
                                     <i className="material-icons">wb_incandescent</i>
                                 </a>
                             </li>
+                            <li>
+                                <Link to="/posts/new">
+                                    <i className="material-icons">wb_incandescent</i>
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
