@@ -12,6 +12,11 @@ const PostListItem = ({ post }) => {
     const cardStyle = isLight ? 'white' : 'blue-grey darken-1'
     const textStyle = isLight ? '' : 'white-text'
 
+    const selectCard = () => {
+        setSelected(!selected)
+        setCount(count + 1)
+    }
+
     return (
         <div className={`col s12 ${cardSize}`}>
             <div className={`card ${cardStyle}`}>
@@ -19,15 +24,8 @@ const PostListItem = ({ post }) => {
                     <span className="card-title">{isGrid ? post.shortTitle : post.title}</span>
                     <p>{isGrid ? post.shortBody : post.body}</p>
                 </div>
-                <div className={`card-action ${selected ? 'red' : ''}`}>
-                    <a
-                        onClick={() => {
-                            setSelected(!selected)
-                            setCount(count + 1)
-                        }}
-                    >
-                        Select card ( click count: {count} )
-                    </a>
+                <div onClick={selectCard} className={`card-action ${selected ? 'red' : ''}`}>
+                    <span>Select card ( click count: {count} )</span>
                 </div>
             </div>
         </div>

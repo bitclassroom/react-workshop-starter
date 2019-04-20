@@ -22,13 +22,13 @@ const Header = props => {
                             <li>
                                 <Link to="/about">{aboutText}</Link>
                             </li>
-                            <li>
-                                <a onClick={onChangeLayout}>
+                            <li onClick={onChangeLayout}>
+                                <a>
                                     <i className="material-icons">view_module</i>
                                 </a>
                             </li>
-                            <li>
-                                <a onClick={onThemeLayout}>
+                            <li onClick={onThemeLayout}>
+                                <a>
                                     <i className="material-icons">wb_incandescent</i>
                                 </a>
                             </li>
