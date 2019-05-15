@@ -8,7 +8,7 @@ import Main from './Main'
 
 const App = () => (
     <>
-        <Header title="App" />
+        <Header />
         <Main />
         <Footer />
     </>

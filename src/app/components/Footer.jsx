@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Footer = () => (
-    <footer className="page-footer red darken-2">
+    <footer>
         <div className="footer-copyright">
-            <div className="container">© {new Date().getFullYear()} Copyright BIT</div>
+            <div>© {new Date().getFullYear()} Copyright Fastidious</div>
         </div>
     </footer>
 )

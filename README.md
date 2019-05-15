@@ -1,3 +1,11 @@
-# React Workshop Starter
+# Fastidious Admin
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This is
+
+## Starting project
+
+To start project execute
+
+```
+    yarn && yarn start
+```
