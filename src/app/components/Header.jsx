@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { withAppContext } from 'app/context/AppContext'
 
-const Header = ({ title = '' }) => (
+const Header = ({ title = '', global }) => (
     <header>
-        <nav className="red darken-2">
+        <nav className={`${global.theme === 'dark' ? 'black' : 'red'} darken-2`}>
             <div className="container">
                 <div className="nav-wrapper">
                     <Link to="/" className="brand-logo card-title">
@@ -20,4 +21,4 @@ const Header = ({ title = '' }) => (
     </header>
 )
 
-export default Header
+export default withAppContext(Header)

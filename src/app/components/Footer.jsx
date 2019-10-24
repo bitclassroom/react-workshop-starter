@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 const Footer = () => (
     <footer className="page-footer red darken-2">
@@ -8,4 +9,4 @@ const Footer = () => (
     </footer>
 )
 
-export default Footer
+export default withRouter(Footer)

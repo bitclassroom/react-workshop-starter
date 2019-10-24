@@ -1,12 +1,29 @@
-import { API } from '../shared/api'
-import User from '../models/User'
+import { API } from 'shared/api'
+
+import User from 'models/User'
 
 export class UserService {
-    async fetchUsers() {
+    fetchUsers() {
         // Fetch your users
-        const { data } = await API.get('/posts')
+        return API.get('/users').then(response => {
+            console.log('response', response)
 
-        return new User(data)
+            const { data: users } = response
+
+            console.log('API users', users)
+
+            const myUsers = users.map(user => new User(user))
+            console.log('myUsers', myUsers)
+            return myUsers
+        })
+    }
+
+    fetchUser(userId) {
+        return API.get(`/users/${userId}`).then(response => {
+            const { data: user } = response
+
+            return new User(user)
+        })
     }
 }
 
