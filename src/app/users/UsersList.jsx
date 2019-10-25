@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { userService } from 'services/userService'
 
 import UserListItem from './UserListItem'
+import InputField from 'app/components/InputField'
 
 const UsersList = () => {
     const [users, setUsers] = useState([])
@@ -24,16 +25,25 @@ const UsersList = () => {
         }
     }
 
+    const _searchUsers = searchText => {
+        const searchUsers = users.filter(user => {
+            return user.name.toLowerCase().includes(searchText.toLowerCase())
+        })
+
+        setUsers(searchUsers)
+    }
+
     if (error) {
         throw Error('Something went wrong')
     }
 
     return (
-        <ul className="collection">
+        <React.Fragment>
+            <InputField type="search" onType={_searchUsers} placeholder={'Search users'} />
             {users.map(user => (
                 <UserListItem key={user.id} user={user} />
             ))}
-        </ul>
+        </React.Fragment>
     )
 }
 

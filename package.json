@@ -7,13 +7,15 @@
         "react": "^16.11.0",
         "react-dom": "^16.11.0",
         "react-router-dom": "^5.1.2",
-        "react-scripts": "3.2.0"
+        "react-scripts": "3.2.0",
+        "styled-components": "^4.4.0"
     },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "reset": "rm -rf node_modules && yarn"
     },
     "devDependencies": {
         "enzyme": "~3.10.0",
